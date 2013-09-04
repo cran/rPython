@@ -8,7 +8,7 @@
   python.exec( python.code, get.exception = TRUE )
 }
 \arguments{
-  \item{python.code}{ a character vector containing Python code, typically containing a single line with indentation and EOL characters as required by Python syntax }
+  \item{python.code}{ a character vector containing Python code, typically a single line with indentation and EOL characters as required by Python syntax }
   \item{get.exception}{ logical value indicating whether to check or not for exceptions in Python }
 }
 \details{

@@ -1,3 +1,0 @@
-# Required vars
-PKG_LIBS=-L/usr/lib/python3.2/config-3.2mu -lpthread -ldl -lutil -lm -lpython3.2mu -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
-PKG_CFLAGS=-I/usr/include/python3.2mu -I/usr/include/python3.2mu -D PYTHONLIBFILE=libpython3.2.so

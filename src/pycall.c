@@ -1,6 +1,10 @@
 #include <Python.h>
 #include <string.h>
+
+#ifndef _WIN32
 #include <dlfcn.h>
+#endif
+
 #include <bytesobject.h>		// Port python 3
 
 #define xstr(a) str(a)
@@ -12,8 +16,10 @@
 
 void py_init(){
 
+#ifndef _WIN32
     //dlopen( "libpython2.7.so.1.0", RTLD_NOW | RTLD_GLOBAL );
     dlopen( xstr(PYTHONLIBFILE), RTLD_NOW | RTLD_GLOBAL );		// Passed as a macro at compile time
+#endif
 
     Py_Initialize();
     PyRun_SimpleString("import json");

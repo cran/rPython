@@ -1,8 +1,9 @@
 #########################################################
 # CGB, 20100718, created
+# cjgb, 20130902, fixed issues on json interface
 #########################################################
 
-python.call <- function( py.foo, ... ){
+python.call <- function( py.foo, ..., simplify = TRUE, as.is = FALSE ){
 
     foo.args <- list( ... )
 
@@ -17,8 +18,8 @@ python.call <- function( py.foo, ... ){
     #foo.args.dict <- toJSON( foo.args[  which.dict ] )
     #foo.args.vect <- toJSON( foo.args[ !which.dict ] )
 
-    foo.args.dict <- toJSON( foo.args[  which.dict ], collapse = " " )
-    foo.args.vect <- toJSON( foo.args[ !which.dict ], collapse = " " )
+    foo.args.dict <- toJSON( foo.args[  which.dict ], collapse = " ", asIs = as.is )
+    foo.args.vect <- toJSON( foo.args[ !which.dict ], collapse = " ", asIs = as.is )
 
     # Creating the call
 
@@ -39,7 +40,7 @@ python.call <- function( py.foo, ... ){
 
     ret <- python.get( "_r_call_return" )
 
-    if( length( ret ) == 1 ) ret <- ret[[1]]
+    if( length( ret ) == 1 && simplify ) ret <- ret[[1]]
 
     ret
 }
