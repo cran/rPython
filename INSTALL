@@ -31,6 +31,5 @@ it will install against the "canonical" Python version in the system within the 
 WINDOWS SYSTEMS
 ===============
 
-On a Windows system, the package can only be installed from source at this time. Details to 
-come.
-
+On a Windows system, the package can be installed from https://github.com/cjgb/rPython-win. 
+It is the same source code and comes with specific platform instructions.
